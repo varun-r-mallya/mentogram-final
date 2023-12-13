@@ -108,21 +108,47 @@ header{
     cursor: pointer;
     margin-top: 0px;
   }
+
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
   
-  .registerprompt{
+.registerprompt{
     margin: 0px;
     padding: 0px;
+    margin-bottom: 5px;
     font-size: 12px;
     text-align: right;
   }
 
-  footer{
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-  }
-  
+.registerprompt > button{
+    color: #17191b;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+    width: auto;
+    font-size: 12px;
+}
+
+.registerprompt > button:hover{
+    color: black;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+    width: auto;
+    font-size: 12px;
+}
+
