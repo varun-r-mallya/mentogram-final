@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect} from 'react';
 import '../App.css';
+import {serverURL} from '../serverURL';
 
 export default function MenteeLogin() {
     
@@ -15,12 +16,12 @@ export default function MenteeLogin() {
           [name]: value,
         });
       };
-    
+      
       const handleSubmit = async (e) => {
         e.preventDefault();
     
         try {
-          const response = await fetch('http://192.168.29.29:1234/menteelogin/', {
+          const response = await fetch(`${serverURL}/menteelogin/`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

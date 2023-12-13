@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect} from 'react';
 import '../App.css';
 import MentorRegister from './MentorRegister';
+import {serverURL} from '../serverURL';
 
 export default function MentorLogin() {
     const[registerlogin, setRegisterLogin] = useState(false);
@@ -29,7 +30,7 @@ export default function MentorLogin() {
             e.preventDefault();
         
             try {
-            const response = await fetch('http://192.168.29.29:1234/mentorlogin/', {
+            const response = await fetch(`${serverURL}/mentorlogin/`, {                // https://wbhr9zdg-1234.inc1.devtunnels.ms/mentorlogin/ , http://192.168.29.29:1234/mentorlogin/
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',

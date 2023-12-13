@@ -22,7 +22,7 @@ app.post('/menteelogin', (req, res) => {
     console.log('Mentee Login successful')
   } else {
     res.status(400).json({ message: 'Invalid credentials' });
-    console.log('Invalid Mentee credentials')
+    console.log('Invalid Mentee credentials buy8u8o')
   }
 });
 
