@@ -47,19 +47,18 @@ app.post('/mentorlogin', (req, res) => {
 });
 
 app.post('/mentorregister', (req, res) => {
-  const { email, password, confirmpassword } = req.body;
+  const { username, email, password, confirmpassword } = req.body;
   
-  console.log(`Email: ${email} Password: ${password} ConfirmPassword: ${confirmpassword}`)
-  // Here you would typically hash the password before storing or comparing it
-  // Example: bcrypt hashing or other encryption techniques
+  console.log(`Username: ${username} Email: ${email} Password: ${password}`)
+  //hash password here
   const checkemail = 'mentor@gmail.com'
   const checkpassword = 'mentor1234'
 
 
-  // Simulating a response
-  if (email===checkemail && password===checkpassword && password===confirmpassword) {
+  //response stimulation
+  if (email===checkemail && password===checkpassword) {
     res.status(200).json({ message: 'Register successful' });
-    console.log('Mentor Register successful')
+    console.log('Mentor Registration successful')
   } else {
     res.status(400).json({ message: 'Invalid credentials' });
     console.log('Invalid Registration credentials')

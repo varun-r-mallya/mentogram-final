@@ -36,7 +36,7 @@ export default function FrontPage() {
   
   return(
     <div>
-      <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
+      <header onClick={() => setChoice("null")}><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
       <DarkModeSwitch />
       {display()}
       <footer>Made by Varun R Mallya, as the Winter Of Code project under SDSLabs-IITR</footer>

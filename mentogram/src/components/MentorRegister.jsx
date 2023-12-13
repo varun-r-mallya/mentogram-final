@@ -1,10 +1,14 @@
+//this page has the code for reading data sent by server in it's message. Copy it from here.
+
 import '../App.css';
 import {serverURL} from '../serverURL';
 import { useState } from 'react';
 
 export default function MentorRegister(){
     
+    const [mentorPage, setMentorPage] = useState(null);
     const [formData, setFormData] = useState({
+        username: '',
         email: '',
         password: '',
         confirmpassword: '',
@@ -21,28 +25,34 @@ export default function MentorRegister(){
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        try {
-        const response = await fetch(`${serverURL}/mentorregister/`, {                // https://wbhr9zdg-1234.inc1.devtunnels.ms/mentorlogin/ , http://192.168.29.29:1234/mentorlogin/
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
-    
-        if (response.ok) {
-            console.log('Form data sent successfully!');
+
+        if (formData.password === formData.confirmpassword) {
+
+            try {
+                const response = await fetch(`${serverURL}/mentorregister/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+                const data = await response.json();
+                setMentorPage(data.message);
+
+                if (response.ok) {
+                    console.log('Form data sent successfully!');
+                } else {
+                    console.error('Failed to send form data');
+                    alert('Incorrect email or password');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error contacting server');
+            }
         } else {
-            console.error('Failed to send form data');
-            alert('Incorrect email or password');
+            alert('Passwords do not match');
         }
-        } catch (error) {
-        console.error('Error:', error);
-        alert('Error contacting server');
-        }
-    };    
-    
+    };
     
     
     return(
@@ -50,6 +60,11 @@ export default function MentorRegister(){
                 <div>
                 <h2>Mentor Registration</h2>
                 <form onSubmit={handleSubmit}>
+                    <label>
+                        Username:
+                        <input type="text" name="username" className="input-field" value={formData.username} onChange={handleInputChange} />
+                    </label>
+                    
                     <label>
                         Email:
                         <input type="email" name="email" className="input-field" value={formData.email} onChange={handleInputChange} />
@@ -67,6 +82,9 @@ export default function MentorRegister(){
                     </div>
                 </form>
                 </div>
+                {/* <div>
+                    {mentorPage}            //this can be used to get URL from server but it is currently receiving the message.
+                </div> */}
             </div>
                 )
 }
