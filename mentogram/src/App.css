@@ -1,0 +1,128 @@
+body {
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+  }
+
+.dark-mode-switch{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+} 
+
+header{
+    background-color: #4ae2d6;
+    height: 150px;
+    width: 100%;
+    -webkit-app-region: drag;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+
+}
+.logo{
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    background-color: #8ff8f3;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.choicepage {
+    
+    width: 30vw;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 15% auto 0;
+  }
+  
+  .choicepage > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    padding-top: 0px;
+    margin-top: 3px;
+  }
+  
+  .choicepage button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+  
+  .choicepage button:hover {
+    background-color: #357ae8;
+  }
+  
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    width: calc(100% - 22px); /* Adjust the input width as needed */
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .submitalign{
+    display: flex;
+    flex-direction: column; /* Ensure items are in a column layout */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    }
+  .submitbutton{
+    display: block;
+    width: 25%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+  
+  .registerprompt{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  footer{
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+  }
+  
