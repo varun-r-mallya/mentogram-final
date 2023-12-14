@@ -12,7 +12,7 @@ exports.mentorRegistration = function (username, email, hashedpassword, res)
             console.error('Failed to connect to MongoDB:', error);
         });
 
-    const user = new registeredMentors({username: username, email: email, hashedPassword: hashedpassword, mentees: [{username: "mentee1" , hashedpassword:"hashedpassword1"},{username: "mentee2" , hashedpassword:"hashedpassword2"}], locationoffolder:"location"});
+    const user = new registeredMentors({username: username, email: email, hashedPassword: hashedpassword});
     // check if same usernamae and email another user is stored or not
     user.save()
         .then(() => {
