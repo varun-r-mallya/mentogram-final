@@ -4,6 +4,9 @@ import MentorRegister from './MentorRegister';
 import {serverURL} from '../serverURL';
 
 export default function MentorLogin() {
+    
+    
+    
     const[registerlogin, setRegisterLogin] = useState(false);
 
     const handleRegisterChange = () => {
@@ -39,7 +42,7 @@ export default function MentorLogin() {
             });
         
             if (response.ok) {
-                console.log('Form data sent successfully!');
+                console.log('Form data sent successfully!' + response.json());
             } else {
                 console.error('Failed to send form data');
                 alert('Incorrect email or password');
