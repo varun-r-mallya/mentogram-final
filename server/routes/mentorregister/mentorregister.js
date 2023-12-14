@@ -1,4 +1,5 @@
-const mentorRegistration = require('./mentorregister/mentorRegistration');
+const mentorRegistration = require('./mentorRegistration');
+const passwordHasher = require('../passwordHasher');
 
 exports.mentorregister = async (req, res) => {
   const { username, email, password, confirmpassword } = req.body;
@@ -7,6 +8,7 @@ exports.mentorregister = async (req, res) => {
     res.status(400).json({ message: 'Passwords do not match' });
     console.log('Passwords do not match');
   } else {
-    mentorRegistration.mentorRegistration(username, email, password, res);
+    const hashedPassword = await passwordHasher.passwordHasher(password);
+    await mentorRegistration.mentorRegistration(username, email, hashedPassword, res);
   }
 }

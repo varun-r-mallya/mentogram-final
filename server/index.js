@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 var cors = require('cors')
 const menteelogin = require('./routes/menteelogin');
-const mentorlogin = require('./routes/mentorlogin');
-const mentorregister = require('./routes/mentorregister');
+const mentorlogin = require('./routes/mentorlogin/mentorlogin');
+const mentorregister = require('./routes/mentorregister/mentorregister');
 
 app.use(cors())
 
