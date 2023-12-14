@@ -26,7 +26,7 @@ export default function MentorRegister(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (formData.password === formData.confirmpassword) {
+        // if (formData.password === formData.confirmpassword) {
 
             try {
                 const response = await fetch(`${serverURL}/mentorregister/`, {
@@ -49,9 +49,10 @@ export default function MentorRegister(){
                 console.error('Error:', error);
                 alert('Error contacting server');
             }
-        } else {
-            alert('Passwords do not match');
-        }
+        // } 
+        // else {
+        //     alert('Passwords do not match');
+        // }
     };
     
     
@@ -82,9 +83,9 @@ export default function MentorRegister(){
                     </div>
                 </form>
                 </div>
-                {/* <div>
-                    {mentorPage}            //this can be used to get URL from server but it is currently receiving the message.
-                </div> */}
+                 <div>
+                    {mentorPage}
+                </div>
             </div>
                 )
 }
