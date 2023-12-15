@@ -3,6 +3,14 @@
 import '../App.css';
 import {serverURL} from '../serverURL';
 import { useState } from 'react';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+} from "react-router-dom";
+
+import FrontPage from './FrontPage';
 
 export default function MentorRegister(){
     
@@ -39,11 +47,16 @@ export default function MentorRegister(){
                 const data = await response.json();
                 setMentorPage(data.message);
 
+                if(data.message === "Registration successful"){
+                    // alert("Mentor registered successfully");
+                    window.location.reload(false);
+                }
+
                 if (response.ok) {
-                    console.log('Form data sent successfully!');
+                    console.log('Registered successfully!');
                 } else {
-                    console.error('Failed to send form data');
-                    alert('Incorrect email or password');
+                    console.error('Failed to send data');
+                    // alert('Incorrect email or password');
                 }
             } catch (error) {
                 console.error('Error:', error);

@@ -6,7 +6,7 @@ import {serverURL} from '../serverURL';
 export default function MentorLogin() {
     
     
-    
+    const [mentorPage, setMentorPage] = useState(null);
     const[registerlogin, setRegisterLogin] = useState(false);
 
     const handleRegisterChange = () => {
@@ -40,18 +40,24 @@ export default function MentorLogin() {
                 },
                 body: JSON.stringify(formData),
             });
+            const data = await response.json();
+            setMentorPage(data.message);
         
             if (response.ok) {
-                console.log('Form data sent successfully!' + response.json());
+                console.log('Login data sent successfully!' + response.json());
             } else {
-                console.error('Failed to send form data');
+                console.error('Failed to send login data');
                 alert('Incorrect email or password');
             }
             } catch (error) {
             console.error('Error:', error);
             alert('Error contacting server');
             }
-        };    
+        };
+        
+        function SetAuth(){
+            //learn to use JWTs here
+        }
         
     return(
     <div>
@@ -94,6 +100,7 @@ export default function MentorLogin() {
     return(
         <div>
         {display()}
+        {mentorPage}
         </div>
     );
 }

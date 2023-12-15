@@ -1,10 +1,16 @@
 import FrontPage from './components/FrontPage';
+import AuthChecker from './components/AuthChecker';
+import HomePage from './components/HomePage';
+import {useEffect, useState} from 'react'
 
 export default function App() {
-  
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  useEffect(() => {
+  AuthChecker(setIsAuthenticated);
+  },[])
   return(
     <div>
-     <FrontPage />
+     {isAuthenticated ? <HomePage /> : <FrontPage />}
     </div>
   );
 }
