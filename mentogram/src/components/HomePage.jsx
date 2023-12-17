@@ -8,7 +8,7 @@ export default function HomePage(){
     
     return(
         <div>
-            <header onClick={() => setChoice("null")}><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
+            <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             <DarkModeSwitch />
             <h1>HomePage</h1>
             <Link to="/login">Login</Link>
