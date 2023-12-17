@@ -1,6 +1,6 @@
 # MentoGram
 <h2>To make this work on your computer:</h2>
-<p>On Linux (Ubuntu based distributions), download MongoDB and Mongosh. Also have node and npm preinstalled. <br><b>USE ONLY:<code>node v20.30.0 (npm v10.2.3)</code></b></li>
+<p>On Linux (Debian based distributions), download MongoDB and Mongosh. Also have node and npm preinstalled. <br><b>USE ONLY:<code>node v20.30.0 (npm v10.2.3)</code></b></li>
 <br>
 Run: <code>service mongod start</code>and enter your password.
 <br>
