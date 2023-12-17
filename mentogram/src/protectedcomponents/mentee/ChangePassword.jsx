@@ -1,3 +1,5 @@
+//the page where mentee can change password
+
 export default function ChangePassword(props) {
 
     return(
