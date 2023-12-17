@@ -4,9 +4,21 @@ import logoformentogram2 from '../assets/logoformentogram2.png';
 import { useState, useEffect, useRef } from 'react';
 import MentorLogin from './MentorLogin.jsx';
 import MenteeLogin from './MenteeLogin.jsx';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom'
+// import AuthChecker from './AuthChecker';
+// import HomePage from './HomePage';
+// import MentorControl from '../protectedcomponents/mentor/MentorControl';
+// import MenteeFrontPage from '../protectedcomponents/mentee/MenteeFrontPage';
 
-export default function FrontPage() {
+export default function FrontPage(props) {
   const [ choice, setChoice ] = useState('null');
+  // const [isSignedIn, setIsSignedIn] = useState(null)
+  // const signin = () => {
+  //   setIsSignedIn(true)
+  // }
+  // const signout = () => {
+  //   setIsSignedIn(false)
+  // }
 
   const display = () => {
     if (choice === 'null') {
@@ -21,14 +33,14 @@ export default function FrontPage() {
     else if(choice === "Mentor") {
       return (
       <div className = "choicepage">
-      <MentorLogin />
+      <MentorLogin signin={props.signin} />
       <button  onClick = {() => setChoice("null")}>Back</button>
       </div>);
     }
     else if(choice === "Mentee") {
       return (
       <div className = "choicepage">
-      <MenteeLogin />
+      <MenteeLogin signin = {props.signin}/>
       <button variant='outline' onClick = {() => setChoice("null")}>Back</button>
       </div>);
     }

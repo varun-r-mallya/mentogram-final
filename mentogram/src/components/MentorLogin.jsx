@@ -2,11 +2,14 @@ import { useState, useRef, useEffect} from 'react';
 import '../App.css';
 import MentorRegister from './MentorRegister';
 import {serverURL} from '../serverURL';
+import {useNavigate} from 'react-router-dom';
 
-export default function MentorLogin() {
+
+export default function MentorLogin(props) {
     
     
     const [mentorPage, setMentorPage] = useState(null);
+    const navigate = useNavigate();
     const[registerlogin, setRegisterLogin] = useState(false);
 
     const handleRegisterChange = () => {
@@ -45,6 +48,7 @@ export default function MentorLogin() {
         
             if (response.ok) {
                 console.log('Login data sent successfully!' + response.json());
+                SetAuth();
             } else {
                 console.error('Failed to send login data');
                 alert('Incorrect email or password');
@@ -57,6 +61,8 @@ export default function MentorLogin() {
         
         function SetAuth(){
             //learn to use JWTs here
+            props.signin();
+            navigate('/mentor');
         }
         
     return(

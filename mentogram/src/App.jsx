@@ -1,16 +1,32 @@
 import FrontPage from './components/FrontPage';
-import AuthChecker from './components/AuthChecker';
 import HomePage from './components/HomePage';
 import {useEffect, useState} from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AuthChecker from './components/AuthChecker';
+import MentorControl from './protectedcomponents/mentor/MentorControl';
+import MenteeFrontPage from './protectedcomponents/mentee/MenteeFrontPage';
+
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  useEffect(() => {
-  AuthChecker(setIsAuthenticated);
-  },[])
+  const [isSignedIn, setIsSignedIn] = useState(null)
+  const signin = () => {
+    setIsSignedIn(true)
+  }
+  const signout = () => {
+    setIsSignedIn(false)
+  }
+
   return(
     <div>
-     {isAuthenticated ? <HomePage /> : <FrontPage />}
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<FrontPage signin={signin} signout={signout} />} />
+        <Route path="/mentee" element={<AuthChecker isSignedIn={isSignedIn}><MenteeFrontPage signout={signout} /></AuthChecker>} />
+        <Route path="/mentor" element={<AuthChecker isSignedIn={isSignedIn}><MentorControl signout={signout} /></AuthChecker>} />
+
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

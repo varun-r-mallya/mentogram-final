@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect} from 'react';
 import '../App.css';
 import {serverURL} from '../serverURL';
+import {useNavigate} from 'react-router-dom';
 
-export default function MenteeLogin() {
+export default function MenteeLogin(props) {
     
-    const [formData, setFormData] = useState({
+  const navigate = useNavigate();  
+  const [formData, setFormData] = useState({
         email: '',
         password: '',
       });
@@ -31,6 +33,9 @@ export default function MenteeLogin() {
     
           if (response.ok) {
             console.log('Form data sent successfully!');
+            props.signin();
+            navigate('/mentee')
+
           } else {
             console.error('Failed to send form data');
             alert('Incorrect email or password');
