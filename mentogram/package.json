@@ -11,14 +11,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-python": "^6.1.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.20",
+    "@uiw/codemirror-theme-okaidia": "^4.21.21",
+    "@uiw/react-codemirror": "^4.21.21",
+    "codemirror": "^6.0.1",
     "darkmode-js": "^1.5.7",
     "jsonwebtoken": "^9.0.2",
+    "lib0": "^0.2.88",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.0"
+    "react-router-dom": "^6.21.0",
+    "y-codemirror.next": "^0.3.2",
+    "y-webrtc": "^10.2.6",
+    "yjs": "^13.6.10"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
