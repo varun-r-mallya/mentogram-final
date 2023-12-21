@@ -4,6 +4,7 @@ var cors = require('cors')
 const menteelogin = require('./routes/menteelogin/menteelogin');
 const mentorlogin = require('./routes/mentorlogin/mentorlogin');
 const mentorregister = require('./routes/mentorregister/mentorregister');
+const collaborativeside = require('./routes/collaborativeside');
 
 app.use(cors())
 
@@ -25,6 +26,8 @@ app.post('/mentorregister', (req, res) => {
   mentorregister.mentorregister(req, res);
 });
 
+
+collaborativeside.collaborativeside();
 
 const port = process.env.PORT || 1234;
 app.listen(port, () => {
