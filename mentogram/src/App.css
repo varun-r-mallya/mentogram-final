@@ -232,3 +232,125 @@ footer{
   letter-spacing: 2px;
 
 }
+
+
+.add-mentees {
+  font-family: 'Arial', sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.add-mentees__title {
+  color: #202124;
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+}
+
+.add-mentees__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-mentees__label {
+  font-size: 14px;
+  color: #202124;
+  margin-bottom: 8px;
+}
+
+.add-mentees__input {
+  height: 36px;
+  padding: 0 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-mentees__input:focus {
+  outline: 2px solid #4285f4;
+  border-color: transparent;
+}
+
+.add-mentees__button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 1rem;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.add-mentees__button:hover {
+  background-color: #0b5db6;
+}
+
+.add-mentees__password {
+  font-size: 14px;
+  font-weight: bold;
+  color: #202124;
+}
+
+/* Handling line breaks for spacing */
+br {
+  margin-bottom: 1rem;
+}
+
+.pagebutton {
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.pagebutton:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.pagebutton:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.pagebutton:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.pagebutton:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+
+.mentorcontrolpanel{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+}

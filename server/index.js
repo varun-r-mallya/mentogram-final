@@ -5,6 +5,7 @@ const menteelogin = require('./routes/menteelogin/menteelogin');
 const mentorlogin = require('./routes/mentorlogin/mentorlogin');
 const mentorregister = require('./routes/mentorregister/mentorregister');
 const collaborativeside = require('./routes/collaborativeside');
+const creatementee = require('./routes/creatementee/creatementee');
 
 app.use(cors())
 
@@ -26,6 +27,9 @@ app.post('/mentorregister', (req, res) => {
   mentorregister.mentorregister(req, res);
 });
 
+app.post('/creatementee', (req, res) => {
+  creatementee.creatementee(req, res);
+});
 
 collaborativeside.collaborativeside();
 
