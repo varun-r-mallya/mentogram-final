@@ -3,7 +3,8 @@ import '../App.css';
 import MentorRegister from './MentorRegister';
 import {serverURL} from '../serverURL';
 import {useNavigate} from 'react-router-dom';
-
+import axios from 'axios';
+import { setToken } from '../protectedcomponents/tokenService';
 
 export default function MentorLogin(props) {
     
@@ -21,6 +22,7 @@ export default function MentorLogin(props) {
         const [formData, setFormData] = useState({
             email: '',
             password: '',
+            type: 'mentor',
         });
         
     
@@ -47,8 +49,8 @@ export default function MentorLogin(props) {
             setMentorPage(data.message);
         
             if (response.ok) {
-                console.log('Login data sent successfully!' + response.json());
-                SetAuth();
+                console.log('Login data sent successfully!');
+                SetAuth(formData);
             } else {
                 console.error('Failed to send login data');
                 alert('Incorrect email or password');
@@ -59,10 +61,18 @@ export default function MentorLogin(props) {
             }
         };
         
-        function SetAuth(){
-            //learn to use JWTs here
-            props.signin();
-            navigate('/mentor');
+        function SetAuth(formData) {
+            axios.post(`${serverURL}/auth/`, formData)
+                .then(response => {
+                    const token = response.data.token;
+                    setToken(token);
+                    props.signin();
+                    navigate('/mentor');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error contacting server');
+                });
         }
         
     return(

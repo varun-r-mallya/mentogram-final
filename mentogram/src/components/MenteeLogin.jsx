@@ -2,6 +2,9 @@ import { useState, useRef, useEffect} from 'react';
 import '../App.css';
 import {serverURL} from '../serverURL';
 import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
+import { setToken } from '../protectedcomponents/tokenService';
+
 
 export default function MenteeLogin(props) {
     
@@ -16,6 +19,7 @@ export default function MenteeLogin(props) {
         setFormData({
           ...formData,
           [name]: value,
+          type: 'mentee',
         });
       };
       
@@ -33,8 +37,7 @@ export default function MenteeLogin(props) {
     
           if (response.ok) {
             console.log('Form data sent successfully!');
-            props.signin();
-            navigate('/mentee')
+            SetAuth(formData);
 
           } else {
             console.error('Failed to send form data');
@@ -45,6 +48,20 @@ export default function MenteeLogin(props) {
           alert('Error contacting server');
         }
       };
+
+      function SetAuth(formData) {
+        axios.post(`${serverURL}/auth/`, formData)
+            .then(response => {
+                const token = response.data.token;
+                setToken(token);
+                props.signin();
+                navigate('/mentee');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error contacting server');
+            });
+    }
     
     
     return(

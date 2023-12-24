@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthChecker from './components/AuthChecker';
 import MentorControl from './protectedcomponents/mentor/MentorControl';
 import MenteeFrontPage from './protectedcomponents/mentee/MenteeFrontPage';
-
+import { removeToken } from './protectedcomponents/tokenService';
 
 export default function App() {
   const [isSignedIn, setIsSignedIn] = useState(null)
@@ -13,6 +13,7 @@ export default function App() {
     setIsSignedIn(true)
   }
   const signout = () => {
+    removeToken();
     setIsSignedIn(false)
   }
 
