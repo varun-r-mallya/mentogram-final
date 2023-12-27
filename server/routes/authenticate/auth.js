@@ -12,7 +12,7 @@ exports.auth = (req, res) => {
         type,
         
     };
-    const token = jwt.sign(user, secret, { expiresIn: '2m' });
+    const token = jwt.sign(user, secret, { expiresIn: '1h' });
     console.log(token)
     res.json({
         token

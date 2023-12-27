@@ -7,6 +7,7 @@ const mentorregister = require('./routes/mentorregister/mentorregister');
 const collaborativeside = require('./routes/collaborativeside');
 const creatementee = require('./routes/creatementee/creatementee');
 const auth = require('./routes/authenticate/auth');
+const listsender = require('./routes/listsender');
 
 app.use(cors())
 
@@ -34,6 +35,10 @@ app.post('/creatementee', (req, res) => {
 
 app.post('/auth', (req, res) => {
   auth.auth(req, res);
+});
+
+app.post('/listsender', (req,res) => {
+  listsender.listsender(req,res);
 });
 
 collaborativeside.collaborativeside();

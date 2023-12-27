@@ -3,12 +3,44 @@
 // AddMentees.jsx. There will also be a button on each mentee to "Connect mentee". This will redirect the mentor to the collaborative coding
 // /chat/videochat/filemanager page. 
 
-export default function ListOfMentees(){
+import { useEffect, useState } from "react";
+import { getToken } from "../tokenService";
+import { serverURL } from "../../serverURL";
 
-    return(
-        <div>
-            <h1>List Of Mentees</h1>
+export default function ListOfMentees() {
+            const [mentees, setMentees] = useState([]);
+            const token = getToken();
+            const sendTokenToServer = async () => {
+                try {
+                    const response = await fetch(`${serverURL}/listsender`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "token": token,
+                        },
+                    });
+                    const data = await response.json();
+                    console.log(data);
+                    setMentees(data.mentees);
+                } catch (error) {
+                    console.error(error);
+                }
+            };
 
-        </div>
-    );
-}
+            useEffect(() => {
+                sendTokenToServer();
+            }, []);
+
+            // can be written like mentee.email if i pass more stuff along with email in mentee
+
+            return (
+                <div>
+                    <h1>List Of Mentees</h1>
+                    <ul>
+                        {mentees.map((mentee, index) => (
+                            <li key={index}>{mentee}</li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
