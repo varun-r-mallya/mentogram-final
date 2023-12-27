@@ -46,7 +46,7 @@ export default function CollaborativeEditor(){
   }
   return (
   <div>
-    <CodeMirror value={value} doc={ytext.toString()} theme={okaidia} height='100vw' width='50vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
+    <CodeMirror value={value} doc={ytext.toString()} theme={okaidia} height='100vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
     <button onClick={Save}>Save</button>
   </div>
   );
