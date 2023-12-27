@@ -8,6 +8,7 @@ const collaborativeside = require('./routes/collaborativeside');
 const creatementee = require('./routes/creatementee/creatementee');
 const auth = require('./routes/authenticate/auth');
 const listsender = require('./routes/listsender');
+const chatserver = require('./routes/chatserver/chatserver');
 
 app.use(cors())
 
@@ -42,6 +43,7 @@ app.post('/listsender', (req,res) => {
 });
 
 collaborativeside.collaborativeside();
+chatserver.chatserver();
 
 const port = process.env.PORT || 1234;
 app.listen(port, () => {
