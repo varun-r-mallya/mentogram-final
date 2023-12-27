@@ -35,7 +35,6 @@ exports.chatserver = () => {
 
         socket.on('roomMessage', (data) => {
             const { room, username, message } = data;
-            console.log('Received room message: ' + message, "in room", room, "from", username);
             const obj = {
                 username,
                 message
