@@ -17,7 +17,7 @@ function getEmailFromJWT(){
         return decodedToken;
     }
     return null;
-};
+};    
 
 const userName = getEmailFromJWT().email.substring(0, getEmailFromJWT().email.indexOf('@'));
 localStorage.setItem('userName', userName);
