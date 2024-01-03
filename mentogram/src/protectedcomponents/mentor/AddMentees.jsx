@@ -12,6 +12,7 @@ export default function AddMentees() {
     const [mentorPassword, setMentorPassword] = useState('');
     const [menteeEmail, setMenteeEmail] = useState('');
     const [password, setPassword] = useState('');
+    const[serverMessage, setServerMessage] = useState('');
 
     const generatePassword = () => {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -41,6 +42,7 @@ export default function AddMentees() {
         .then(data => {
             // Handle the response from the server
             console.log(data);
+            setServerMessage(data.message);
         })
         .catch(error => {
             // Handle any errors
@@ -88,6 +90,7 @@ export default function AddMentees() {
                 <br />
                 <button type="submit" className="add-mentees__button">Add Mentee</button>
             </form>
+            <p className="add-mentees__server-message">{serverMessage}</p>
         </div>
     );
 }
