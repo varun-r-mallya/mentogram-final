@@ -62,5 +62,5 @@ async function lister(mentor, res) {
         }
     }
 
-    res.status(200).json({ mentees: menteeEmails });
+    res.status(200).json({mentor, mentees: menteeEmails });
 }

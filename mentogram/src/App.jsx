@@ -6,6 +6,8 @@ import AuthChecker from './components/AuthChecker';
 import MentorControl from './protectedcomponents/mentor/MentorControl';
 import MenteeFrontPage from './protectedcomponents/mentee/MenteeFrontPage';
 import { removeToken } from './protectedcomponents/tokenService';
+import MentorFrontPage from './protectedcomponents/mentor/MentorFrontPage';
+
 
 export default function App() {
   const [isSignedIn, setIsSignedIn] = useState(null)
@@ -25,6 +27,8 @@ export default function App() {
         <Route path="/login" element={<FrontPage signin={signin} signout={signout} />} />
         <Route path="/mentee" element={<AuthChecker isSignedIn={isSignedIn}><MenteeFrontPage signout={signout} /></AuthChecker>} />
         <Route path="/mentor" element={<AuthChecker isSignedIn={isSignedIn}><MentorControl signout={signout} /></AuthChecker>} />
+        <Route path="/mentor/access" element={<AuthChecker isSignedIn={isSignedIn}><MentorFrontPage signout={signout} /></AuthChecker>} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
 
       </Routes>
       </BrowserRouter>

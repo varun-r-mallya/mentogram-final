@@ -9,6 +9,7 @@ import { serverURL } from "../../serverURL";
 
 export default function ListOfMentees() {
             const [mentees, setMentees] = useState([]);
+            const [mentor, setMentor] = useState("");
             const token = getToken();
             const sendTokenToServer = async () => {
                 try {
@@ -22,6 +23,7 @@ export default function ListOfMentees() {
                     const data = await response.json();
                     console.log(data);
                     setMentees(data.mentees);
+                    setMentor(data.mentor.email);
                 } catch (error) {
                     console.error(error);
                 }
@@ -38,7 +40,11 @@ export default function ListOfMentees() {
                     <h1>List Of Mentees</h1>
                     <ul>
                         {mentees.map((mentee, index) => (
-                            <li key={index}>{mentee}</li>
+                            <li key={index}>{mentee}
+                            <button onClick={() => {localStorage.setItem("accessCreds", `${mentor}/${mentee}`); 
+                                                    window.location.href = "/mentor/access";
+                                                    }}>Connect Mentee</button>
+                            </li>
                         ))}
                     </ul>
                 </div>
