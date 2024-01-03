@@ -23,7 +23,7 @@ export const usercolors = [
 export const userColor = usercolors[random.uint32() % usercolors.length]
 
 const ydoc = new Y.Doc()
-const provider = new WebrtcProvider('codemirror6-demo-room', ydoc, { signaling: ['ws://192.168.29.29:4444'] }) // { password: 'optional-room-password' })
+const provider = new WebrtcProvider('codemirror6-demo-room', ydoc, { signaling: ['ws://localhost:4444'] }) // { password: 'optional-room-password' })
 const ytext = ydoc.getText('codemirror')
 
 

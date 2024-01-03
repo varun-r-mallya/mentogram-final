@@ -155,7 +155,7 @@ server.on('upgrade', (request, socket, head) => {
     wss.handleUpgrade(request, socket, head, handleAuth);
 });
 
-const host = process.env.HOST || '0.0.0.0';
+const host = process.env.HOST || 'localhost';
 server.listen(port, host, () => {
     console.log('Collaborative code server running on', host, ':', port);
 });
