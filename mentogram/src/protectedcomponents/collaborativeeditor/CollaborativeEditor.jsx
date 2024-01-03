@@ -7,6 +7,7 @@ import * as random from 'lib0/random'
 import React from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
+import Save from './Save.jsx';
 
 
 export const usercolors = [
@@ -36,18 +37,22 @@ provider.awareness.setLocalStateField('user', {
 })
 
 export default function CollaborativeEditor(){
-
+  const [title, setTitle] = React.useState('');
   const [value, setValue] = React.useState("");
   const onChange = React.useCallback((val, viewUpdate) => {
     setValue(val);
   }, []);
-  function Save(){
-    console.log(value);
+
+  function Saver(){
+    Save(value, title);
   }
+
   return (
   <div>
+    <input type="text" onChange={(e) => setTitle(e.target.value)} placeholder={title} className='titlebox' />
+    <button onClick={Saver}>Save</button>
     <CodeMirror value={value} doc={ytext.toString()} theme={okaidia} height='100vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
-    <button onClick={Save}>Save</button>
+    
   </div>
   );
 }

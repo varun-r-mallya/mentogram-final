@@ -9,6 +9,8 @@ const creatementee = require('./routes/creatementee/creatementee');
 const auth = require('./routes/authenticate/auth');
 const listsender = require('./routes/listsender');
 const chatserver = require('./routes/chatserver/chatserver');
+const DirMaker = require('./routes/serverdatadirmaker');
+
 
 app.use(cors())
 
@@ -41,6 +43,11 @@ app.post('/auth', (req, res) => {
 app.post('/listsender', (req,res) => {
   listsender.listsender(req,res);
 });
+
+app.post('/save', (req, res) => {
+  DirMaker.DirMaker(req, res);
+  }
+);
 
 collaborativeside.collaborativeside();
 chatserver.chatserver();
