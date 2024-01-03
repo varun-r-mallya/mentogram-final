@@ -8,7 +8,7 @@ exports.DirMaker = (req, res) => {
 function converter(body){
     const title = body.title;
     const content = body.value;
-    const folderPath = `/server_data/${body.accessCreds}/`;
+    const folderPath = `../server_data/${body.accessCreds}/`;
     console.log(folderPath);
     const fs = require('fs');
     const path = require('path');
