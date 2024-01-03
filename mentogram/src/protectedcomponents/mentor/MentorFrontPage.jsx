@@ -4,6 +4,7 @@ import logoformentogram2 from '../../assets/logoformentogram2.png';
 import CollaborativeEditor from "../collaborativeeditor/CollaborativeEditor.jsx";
 import Messages from "../chatside/Messages.jsx";
 import { jwtDecode } from 'jwt-decode'
+import FileManager from "../fileaccess/FileManager.jsx";
 
 const room = "roomName"
 
@@ -24,6 +25,8 @@ localStorage.setItem('userName', userName);
 }
 
 export default function MentorFrontPage(props) {
+    const [title, setTitle] = React.useState('');
+    const [value, setValue] = React.useState("");
     usernameSet();
     return (
         <div>
@@ -32,8 +35,9 @@ export default function MentorFrontPage(props) {
             <h1>Mentor Front Page</h1>
             <button onClick={() => {window.location.href = "/mentor";}}>Back</button>
             <div><Messages room={room}/></div>
-            <div>
-                <CollaborativeEditor />
+            <div className="maindivision">
+            <FileManager setTitle={setTitle} title={title} setContent={setValue} value={value} />
+            <div className="editor"><CollaborativeEditor setTitle={setTitle} title={title} setValue={setValue} value={value}/></div>
             </div>
             <button className="mentorpagebutton" onClick={props.signout}>Sign Out</button>
         </div>

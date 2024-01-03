@@ -6,7 +6,7 @@
     max-height: 300px;
     overflow-y: auto;
     height: 25vw;
-    width: 50vw;
+    width: 35vw;
 }
 
 .messages_list {
@@ -32,12 +32,12 @@
     align-items: center;
     padding: 10px;
     background-color: #9deea1;
-    width: calc(50vw - 20px);
+    width: calc(35vw - 20px);
     border-radius: 10px;
 }
 
 .messages_form input {
-    width: calc(50vw - 100px);
+    width: calc(35vw - 100px);
     height: 30px;
     border-radius: 5px;
     border: 1px solid #ccc;

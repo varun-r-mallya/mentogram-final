@@ -354,3 +354,27 @@ br {
   margin: 10px;
 
 }
+
+.maindivision{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+}
+
+.editor{
+  flex: 1; /* Add this line to make the editor component take up 50% of the available width */
+  position:relative;
+  margin: 10px;
+  left: 200px;
+
+}
+
+.manager{
+  flex: 1; /* Add this line to make the manager component take up 50% of the available width */
+  position:relative;
+  margin: 10px;
+
+}

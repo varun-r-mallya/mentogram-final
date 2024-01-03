@@ -10,6 +10,7 @@ const auth = require('./routes/authenticate/auth');
 const listsender = require('./routes/listsender');
 const chatserver = require('./routes/chatserver/chatserver');
 const DirMaker = require('./routes/serverdatadirmaker');
+const Sender = require('./routes/serverdatasender');
 
 
 app.use(cors())
@@ -46,6 +47,16 @@ app.post('/listsender', (req,res) => {
 
 app.post('/save', (req, res) => {
   DirMaker.DirMaker(req, res);
+  }
+);
+
+app.post('/load', (req, res) => {
+  Sender.sendServerData(req, res);
+  }
+);
+
+app.post('/load/get', (req, res) => {
+  Sender.getServerData(req, res);
   }
 );
 

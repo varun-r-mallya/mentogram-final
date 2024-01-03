@@ -1,0 +1,45 @@
+.filelist {
+    padding: 2px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 10vw;
+    height: 70vw;
+    position: absolute;
+    left: 0;
+}
+
+.file-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item-fileman {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.option-folder-select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.option-folder-select:focus {
+    outline: none;
+}
+
+.option-folder-select::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #000;
+    margin-left: 5px;
+}

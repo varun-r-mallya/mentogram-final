@@ -36,22 +36,21 @@ provider.awareness.setLocalStateField('user', {
   colorLight: userColor.light
 })
 
-export default function CollaborativeEditor(){
-  const [title, setTitle] = React.useState('');
-  const [value, setValue] = React.useState("");
+export default function CollaborativeEditor(props){
+
   const onChange = React.useCallback((val, viewUpdate) => {
-    setValue(val);
+    props.setValue(val);
   }, []);
 
   function Saver(){
-    Save(value, title);
+    Save(props.value, props.title);
   }
 
   return (
   <div>
-    <input type="text" onChange={(e) => setTitle(e.target.value)} placeholder={title} className='titlebox' />
+    <input type="text" onChange={(e) => props.setTitle(e.target.value)} placeholder={props.title} className='titlebox' />
     <button onClick={Saver}>Save</button>
-    <CodeMirror value={value} doc={ytext.toString()} theme={okaidia} height='100vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
+    <CodeMirror value={props.value} doc={ytext.toString()} theme={okaidia} height='70vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
     
   </div>
   );
