@@ -21,11 +21,11 @@ You can also update your server URL in the front end in a dedicated JSX.
 <li>Mentor registration page ready.
 <li>Database connected to the registrations.
 <li>Error handling on auth ready.
-<li>Skeleton to implement mentee registration ready.
-<li>Collaborative coding achieved on a different repository using Websockets. Could not be done using WebRTC yet. In progress</li>
+<li>mentee registration ready.
+<li>Colllaborative coding ready</li>
 <li>Chat achieved using SocketIO</li>
-<li>File storage done in native format of YJS, not yet in normal file storage type</li>
-<li>Video chat is still in progress. Camera feed has been achieved on same device but across devices, there are problems.</li>
+<li>File storage done</li>
+<li>Video chat is still in progress..</li>
 </ol>
 
 
