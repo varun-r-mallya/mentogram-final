@@ -23,7 +23,7 @@ exports.menteeLoginDB = async (email, password, res) => {
         const isMatch = await bcrypt.compare(password, mentee.hashedPassword);
         if (isMatch) {
             console.log("Mentee Login successful");
-            res.status(200).json({ message: 'Mentee Login successful' });
+            res.status(200).json({ message: 'Mentee Login successful', accessCreds: mentee.folderlocation});
             // add protected routes here
             return mentee;
         } else {

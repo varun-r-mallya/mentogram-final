@@ -37,6 +37,10 @@ export default function MenteeLogin(props) {
     
           if (response.ok) {
             console.log('Form data sent successfully!');
+            response.json().then(data => {
+              console.log(data);
+              localStorage.setItem("accessCreds", data.accessCreds)
+            });
             SetAuth(formData);
 
           } else {

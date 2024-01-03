@@ -62,7 +62,7 @@ function menteeCreate(menteeEmail, password, mentorEmail, res) {
             return;
         }
 
-        const user = new registeredMentees({email: menteeEmail, hashedPassword: hashedPassword, folderlocation: `./${mentorEmail}/${menteeEmail}` });
+        const user = new registeredMentees({email: menteeEmail, hashedPassword: hashedPassword, folderlocation: `/${mentorEmail}/${menteeEmail}` });
         user.save()
             .then((savedUser) => {
                 console.log('Mentee registered successfully ' + savedUser._id);
