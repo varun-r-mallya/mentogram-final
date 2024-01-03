@@ -40,3 +40,12 @@ exports.getServerData = (req, res) => {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     res.status(200).json({ fileContent, fileName: req.body.file.name });
 }
+
+exports.deleteServerData = (req, res) => {
+    const folderPath= `${req.body.user}`;
+    let serverDataPath = path.join(__dirname, '../server_data', folderPath);
+
+    const filePath = path.join(serverDataPath, req.body.file.id);
+    fs.unlinkSync(filePath);
+    res.status(200).json({ message: 'File deleted' });
+}

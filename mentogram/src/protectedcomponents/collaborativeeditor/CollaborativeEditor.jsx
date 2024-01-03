@@ -44,6 +44,7 @@ export default function CollaborativeEditor(props){
 
   function Saver(){
     Save(props.value, props.title);
+    window.location.reload();
   }
 
   return (

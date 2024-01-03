@@ -60,6 +60,11 @@ app.post('/load/get', (req, res) => {
   }
 );
 
+app.post('/load/delete', (req, res) => {
+  Sender.deleteServerData(req, res);
+  }
+);
+
 collaborativeside.collaborativeside();
 chatserver.chatserver();
 

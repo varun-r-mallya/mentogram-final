@@ -46,6 +46,19 @@ export default function MyFileBrowser(props) {
         props.setTitle(data.fileName)
     };
 
+    const handleDelete = async (file) => {
+        console.log('File deleted:', file);
+        const response = await fetch(`${serverURL}/load/delete`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({user, file}),
+        });
+        const data = await response.json();
+        console.log('Server response:', data);
+    }
+
     return (
         <div className='filelist'>
             <h4>Files</h4>
@@ -56,6 +69,9 @@ export default function MyFileBrowser(props) {
                             <li key={file.id} value={file.name} className='list-item-fileman'>
                                 <button className='option-folder-select' onClick={() => handleFileClick(file)}>
                                     {file.name}
+                                </button>
+                                <button className='option-folder-delete' onClick={() => {handleDelete(file); window.location.reload();}}>
+                                    Delete
                                 </button>
                             </li>
                         );
