@@ -41,6 +41,17 @@ exports.chatserver = () => {
             };
             io.to(room).emit('roomMessage', obj); // broadcasting the room message to all clients in the room
         });
+
+        socket.on('video', (data) => {
+            const { room, username, peerId} = data;
+            const obj = {
+                username,
+                peerId
+            };
+            
+            socket.to(room).emit('videosend', obj); // emit only to the user whose username matches toUser
+        }
+        );
     });
 
     const PORT = process.env.PORT || 5001;

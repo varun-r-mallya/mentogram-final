@@ -1,6 +1,7 @@
 import socketIO from 'socket.io-client';
 import Body from "./Body"
 import Footer from "./Footer"
+import VideoCall from "./videocall/VideoCall"
 const socket = socketIO.connect('http://localhost:5001');
 import React, { useState } from 'react';
 import "./Message.css"
@@ -29,6 +30,7 @@ const Messages = (props) => {
     <div className='messages_total'>
       <Body socket={socket} room={props.room}/>
       <Footer socket={socket} room={props.room} userName = {userName} />
+      <VideoCall socket={socket} room={props.room} userName = {userName} />
     </div>
   );
 };
