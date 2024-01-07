@@ -14,18 +14,10 @@ You can also update your server URL in the front end in a dedicated JSX.
 <br>
 <h3>Current Progress:</h3>
 <ol>
-<li>Authentication ready.
-<li>Protected routes ready.
-<li>Mentor login page ready.
-<li>Mentee login page ready.
-<li>Mentor registration page ready.
-<li>Database connected to the registrations.
-<li>Error handling on auth ready.
-<li>mentee registration ready.
-<li>Colllaborative coding ready</li>
-<li>Chat achieved using SocketIO</li>
-<li>File storage done</li>
-<li>Video chat is still in progress..</li>
+<li>Adding rooms to the collaborative editor and removing constant rooms left
+<li>Making it mobile friendly left.
+<li>Security isn't good enough.
+<li>Other than that, completed.
 </ol>
 
 
