@@ -8,7 +8,9 @@ import React from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import Save from './Save.jsx';
+import './CollaborativeEditor.css';
 
+const userName = localStorage.getItem('userName');
 
 export const usercolors = [
   { color: '#30bced', light: '#30bced33' },
@@ -31,7 +33,7 @@ const ytext = ydoc.getText('codemirror')
 const undoManager = new Y.UndoManager(ytext)
 
 provider.awareness.setLocalStateField('user', {
-  name: 'Anonymous ' + Math.floor(Math.random() * 100),
+  name: userName,
   color: userColor.color,
   colorLight: userColor.light
 })
@@ -49,8 +51,10 @@ export default function CollaborativeEditor(props){
 
   return (
   <div>
+    <div className="ballsdiv">
     <input type="text" onChange={(e) => props.setTitle(e.target.value)} placeholder={props.title} className='titlebox' />
-    <button onClick={Saver}>Save</button>
+    <button onClick={Saver} className="saver">Save</button>
+    </div>
     <CodeMirror value={props.value} doc={ytext.toString()} theme={okaidia} height='70vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
     
   </div>

@@ -5,6 +5,7 @@ import CollaborativeEditor from "../collaborativeeditor/CollaborativeEditor.jsx"
 import Messages from "../chatside/Messages.jsx";
 import { jwtDecode } from 'jwt-decode'
 import FileManager from "../fileaccess/FileManager.jsx";
+import bg2pic from '../../assets/bg2pic.jpg';
 
 const room = "roomName"
 
@@ -29,11 +30,11 @@ export default function MentorFrontPage(props) {
     const [value, setValue] = React.useState("");
     usernameSet();
     return (
-        <div>
+        <div style={{ backgroundImage: `url(${bg2pic})`, height: "88vw" }}>
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             <DarkModeSwitch />
-            <h1>Mentor Front Page</h1>
-            <button onClick={() => {window.location.href = "/mentor";}}>Back</button>
+            <h1>Mentor</h1>
+            <button onClick={() => {window.location.href = "/mentor";}} className="backbutton6">Back</button>
             <div><Messages room={room}/></div>
             <div className="maindivision">
             <FileManager setTitle={setTitle} title={title} setContent={setValue} value={value} />
