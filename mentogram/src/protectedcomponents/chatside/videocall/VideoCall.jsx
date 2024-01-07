@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Peer from 'peerjs';
+import './VideoCall.css';
 
 export default function VideoCall(props) {
 
@@ -79,15 +80,15 @@ export default function VideoCall(props) {
     const endCall = () => {
         if (callInstance) {Login
             callInstance.close();
-            // currentUserVideoRef.current.srcObject = null;
-            // remoteVideoRef.current.srcObject = null;
+            currentUserVideoRef.current.srcObject = null;
+            remoteVideoRef.current.srcObject = null;
         }
         currentUserVideoRef.current.srcObject = null;
         remoteVideoRef.current.srcObject = null;
-        socket.on('disconnect', () => {
-            console.log('Disconnected from server');
-        });
             socket.off('videosend');
+            socket.on('disconnect', () => {
+                console.log('Disconnected from server');
+            });
         window.location.reload();
 
     }
@@ -96,10 +97,12 @@ export default function VideoCall(props) {
         <div className="App">
             {/* <p>PeerId: {peerId}</p> */}
             <br />
+            <div className='videocallheading'>
             {/* <input type="text" value={mentorName} onChange={e => setMentorName(e.target.value)} /> */}
-            <button onClick={handleConnect}>Connect</button>
-            <button onClick={() => call(remotePeerIdValue)}>Call</button>
-            <button onClick={endCall}>End Call</button>
+            <button onClick={handleConnect} className='connectbutton'>Connect</button>
+            {/* <button onClick={() => call(remotePeerIdValue)}>Call</button> */}
+            <button onClick={endCall} className='endcallbutton'>End Call</button>
+            </div>
             <div>
                 <video ref={remoteVideoRef} />
             </div>

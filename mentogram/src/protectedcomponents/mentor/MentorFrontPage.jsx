@@ -30,7 +30,7 @@ export default function MentorFrontPage(props) {
     const [value, setValue] = React.useState("");
     usernameSet();
     return (
-        <div style={{ backgroundImage: `url(${bg2pic})`, height: "88vw" }}>
+        <div style={{ backgroundImage: `url(${bg2pic})` }}>
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             <DarkModeSwitch />
             <h1>Mentor</h1>

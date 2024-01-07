@@ -31,10 +31,10 @@ export default function MenteeFrontPage(props) {
     const [value, setValue] = React.useState("");
     usernameSet();
     return (
-        <div style={{ backgroundImage: `url(${bg2pic})`, height: "1070px" }}>
+        <div style={{ backgroundImage: `url(${bg2pic})` }}>
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             <DarkModeSwitch />
-            <h1>Mentee Front Page</h1>
+            <h1 style={{textAlign: "center"}}>Mentee</h1>
             <div><Messages room={room}/></div>
             <div className="maindivision">
             <FileManager setTitle={setTitle} title={title} setContent={setValue} value={value} />
