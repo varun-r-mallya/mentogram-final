@@ -77,30 +77,34 @@ export default function VideoCall(props) {
     }
 
     const endCall = () => {
-        if (callInstance) {
+        if (callInstance) {Login
             callInstance.close();
-            currentUserVideoRef.current.srcObject = null;
-            remoteVideoRef.current.srcObject = null;
+            // currentUserVideoRef.current.srcObject = null;
+            // remoteVideoRef.current.srcObject = null;
         }
+        currentUserVideoRef.current.srcObject = null;
+        remoteVideoRef.current.srcObject = null;
         socket.on('disconnect', () => {
             console.log('Disconnected from server');
         });
             socket.off('videosend');
+        window.location.reload();
 
     }
 
     return (
         <div className="App">
-            <p>PeerId: {peerId}</p>
+            {/* <p>PeerId: {peerId}</p> */}
+            <br />
             {/* <input type="text" value={mentorName} onChange={e => setMentorName(e.target.value)} /> */}
             <button onClick={handleConnect}>Connect</button>
             <button onClick={() => call(remotePeerIdValue)}>Call</button>
             <button onClick={endCall}>End Call</button>
             <div>
-                <video ref={currentUserVideoRef} muted />
+                <video ref={remoteVideoRef} />
             </div>
             <div>
-                <video ref={remoteVideoRef} />
+                <video ref={currentUserVideoRef} muted />
             </div>
         </div>
     );
