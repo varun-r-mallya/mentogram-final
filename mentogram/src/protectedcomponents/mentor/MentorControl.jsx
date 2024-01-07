@@ -4,6 +4,7 @@ import logoformentogram2 from '../../assets/logoformentogram2.png';
 import ListOfMentees from './ListOfMentees.jsx';
 import { useState } from "react";
 import AddMentees from "./AddMentees.jsx";
+import bg2pic from '../../assets/bg2pic.jpg';
 
 export default function MentorControl(props){
     
@@ -21,7 +22,7 @@ export default function MentorControl(props){
     };
 
     return(
-        <div>
+        <div style={{ backgroundImage: `url(${bg2pic})`, height: "1070px" }} onLoad={handleListOfMenteesClick}>
         <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
         <DarkModeSwitch />
         <h1 className="mentorcontrolpanelhead">Mentor Control Panel</h1>

@@ -1,0 +1,29 @@
+.mentees-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f1f3f4;
+    margin-bottom: 1rem;
+}
+
+.list:hover{
+    background-color: #e2e6e8;
+}
+
+.connect-button{
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}

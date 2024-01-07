@@ -3,7 +3,7 @@
 // This will have a form to add mentee email and a password will be generated and a share button can be used to share the 
 // password with the mentee.
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../App.css"
 import { serverURL } from '../../serverURL';
 
@@ -22,6 +22,10 @@ export default function AddMentees() {
         }
         setPassword(result);
     };
+
+    useEffect(() => {
+        generatePassword();
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -49,6 +53,14 @@ export default function AddMentees() {
             console.error(error);
         });
     };
+
+    const copyToClipboard = async () => {
+        try {
+          await navigator.clipboard.writeText("To the mentee:" + "\n\n" + "Email: " + menteeEmail + "\n" + "Password: " + password);
+        } catch (error) {
+          alert('Error copying to clipboard:', error);
+        }
+      };
 
     return (
         <div className="add-mentees">
@@ -82,11 +94,12 @@ export default function AddMentees() {
                 />
                 <br />
                 <button type="button" onClick={generatePassword} className="add-mentees__button">
-                    Generate Password
+                    Generate New Password
                 </button>
                 <br />
                 <label htmlFor="password" className="add-mentees__label">Password:</label>
                 <b className="add-mentees__password">{password}</b>
+                <button className="copybutton" onClick={copyToClipboard}>Copy Login Info</button>
                 <br />
                 <button type="submit" className="add-mentees__button">Add Mentee</button>
             </form>

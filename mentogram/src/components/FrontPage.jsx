@@ -4,6 +4,7 @@ import logoformentogram2 from '../assets/logoformentogram2.png';
 import { useState, useEffect, useRef } from 'react';
 import MentorLogin from './MentorLogin.jsx';
 import MenteeLogin from './MenteeLogin.jsx';
+import bg2pic from '../assets/bg2pic.jpg';
 
 export default function FrontPage(props) {
   const [ choice, setChoice ] = useState('null');
@@ -35,7 +36,7 @@ export default function FrontPage(props) {
   }
   
   return(
-    <div>
+    <div style={{ backgroundImage: `url(${bg2pic})`, height: "1070px" }}>
       <header onClick={() => setChoice("null")}><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
       <DarkModeSwitch />
       {display()}

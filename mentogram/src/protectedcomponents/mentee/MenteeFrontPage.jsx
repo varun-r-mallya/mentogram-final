@@ -6,7 +6,7 @@ import CollaborativeEditor from "../collaborativeeditor/CollaborativeEditor.jsx"
 import Messages from "../chatside/Messages.jsx";
 import { jwtDecode } from 'jwt-decode'
 import FileManager from "../fileaccess/FileManager.jsx";
-
+import bg2pic from '../../assets/bg2pic.jpg';
 
 const room = "roomName"
 
@@ -31,7 +31,7 @@ export default function MenteeFrontPage(props) {
     const [value, setValue] = React.useState("");
     usernameSet();
     return (
-        <div>
+        <div style={{ backgroundImage: `url(${bg2pic})`, height: "1070px" }}>
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             <DarkModeSwitch />
             <h1>Mentee Front Page</h1>

@@ -6,6 +6,7 @@
 import { useEffect, useState } from "react";
 import { getToken } from "../tokenService";
 import { serverURL } from "../../serverURL";
+import "./ListOfMentees.css";
 
 export default function ListOfMentees() {
             const [mentees, setMentees] = useState([]);
@@ -36,17 +37,27 @@ export default function ListOfMentees() {
             // can be written like mentee.email if i pass more stuff along with email in mentee
 
             return (
-                <div>
-                    <h1>List Of Mentees</h1>
-                    <ul>
-                        {mentees.map((mentee, index) => (
-                            <li key={index}>{mentee}
-                            <button onClick={() => {localStorage.setItem("accessCreds", `${mentor}/${mentee}`); 
-                                                    window.location.href = "/mentor/access";
-                                                    }}>Connect Mentee</button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            );
-        }
+                        <div>
+                            <h1>Mentees</h1>
+                            <ul className="mentees-list"> {/* Add a class name for styling */}
+                                {mentees.map((mentee, index) => (
+                                    <li className="list" key={index}>
+                                        {mentee}
+                                        <button
+                                            onClick={() => {
+                                                localStorage.setItem(
+                                                    "accessCreds",
+                                                    `${mentor}/${mentee}`
+                                                );
+                                                window.location.href = "/mentor/access";
+                                            }}
+                                            className="connect-button"
+                                        >
+                                            Connect Mentee
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    );
+                }

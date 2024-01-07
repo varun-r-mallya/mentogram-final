@@ -38,6 +38,7 @@ header{
     border-radius: 10px;
 }
 
+
 .choicepage {
     
     width: 30vw;
@@ -377,4 +378,69 @@ br {
   position:relative;
   margin: 10px;
 
+}
+
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.maindivision2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  top: 50%;
+  bottom: 50%;
+}
+
+.button-main {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  top: 5000px;
+  margin-top: 10px;
+}
+
+.button-main:hover {
+  background-color: #0056b3;
+}
+
+.github-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #24292e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.github-button:hover {
+  background-color: #161b22;
+}
+
+.copybutton {
+  padding: 10px 20px;
+  font-size: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.copybutton:hover {
+  background-color: #0056b3;
 }
