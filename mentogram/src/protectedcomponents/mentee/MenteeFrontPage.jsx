@@ -35,7 +35,6 @@ export default function MenteeFrontPage(props) {
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             <DarkModeSwitch />
             <h1>Mentee Front Page</h1>
-            <button onClick={() => {window.location.href = "/mentee";}}>Back</button>
             <div><Messages room={room}/></div>
             <div className="maindivision">
             <FileManager setTitle={setTitle} title={title} setContent={setValue} value={value} />
