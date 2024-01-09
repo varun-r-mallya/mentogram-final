@@ -1,4 +1,25 @@
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
+
 exports.DirMaker = (req, res) => {
+    const token = req.headers.token;
+    if(!token){
+        return res.status(401).json({message: "No token provided"});    
+    }
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+        if(err){
+            console.log(err);
+            return res.status(500).json({message: "Failed to authenticate token"});
+        } else {
+            console.log(decoded);
+            realDirMaker(req, res, decoded);
+        }
+    });
+
+   
+}
+
+function realDirMaker (req, res, decoded){
     const fs = require('fs');
     const path = require('path');
     console.log(req.body);

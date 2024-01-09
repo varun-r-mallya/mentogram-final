@@ -1,7 +1,9 @@
 import {serverURL} from '../../serverURL.jsx';
+import {getToken} from '../tokenService';
 
 export default function Save(value, title){
     const accessCreds = localStorage.getItem('accessCreds');
+    const token = getToken();
     const body = {
         accessCreds,
         title,
@@ -11,7 +13,8 @@ export default function Save(value, title){
     fetch(`${serverURL}/save`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "token": token,
         },
         body: JSON.stringify(body)
     })
