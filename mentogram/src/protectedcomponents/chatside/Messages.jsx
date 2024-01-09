@@ -5,7 +5,28 @@ import VideoCall from "./videocall/VideoCall"
 const socket = socketIO.connect('http://localhost:5001');
 import React, { useState } from 'react';
 import "./Message.css"
-const userName = localStorage.getItem('userName');
+import { jwtDecode } from 'jwt-decode'
+
+
+function usernameSet(){
+
+  function getEmailFromJWT(){
+      const token = localStorage.getItem('token');
+      if (token) {
+          const decodedToken = jwtDecode(token);
+          return decodedToken;
+      }
+      return null;
+  };    
+  
+  if(getEmailFromJWT() === null){
+    return null;
+  }
+  return getEmailFromJWT().email.substring(0, getEmailFromJWT().email.indexOf('@'));
+  
+  }
+  
+const userName = usernameSet();
 import { useEffect } from 'react';
 
 const Messages = (props) => {

@@ -4,13 +4,32 @@ import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
 import { yCollab } from 'y-codemirror.next'
 import * as random from 'lib0/random'
-import React from 'react';
+import React, {useEffect} from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import Save from './Save.jsx';
-import './CollaborativeEditor.css';
+import './CollaborativeEditor.css'
+import { jwtDecode } from 'jwt-decode'
 
-const userName = localStorage.getItem('userName');
+function usernameSet(){
+
+  function getEmailFromJWT(){
+      const token = localStorage.getItem('token');
+      if (token) {
+          const decodedToken = jwtDecode(token);
+          return decodedToken;
+      }
+      return null;
+  };    
+  
+  if(getEmailFromJWT() === null){
+    return "anon";
+  }
+  return getEmailFromJWT().email.substring(0, getEmailFromJWT().email.indexOf('@'));
+  
+  }
+  
+let userName = usernameSet();
 
 export const usercolors = [
   { color: '#30bced', light: '#30bced33' },
@@ -39,6 +58,7 @@ provider.awareness.setLocalStateField('user', {
 })
 
 export default function CollaborativeEditor(props){
+  useEffect(() => {userName = usernameSet()}, []);
 
   const onChange = React.useCallback((val, viewUpdate) => {
     props.setValue(val);
@@ -49,11 +69,14 @@ export default function CollaborativeEditor(props){
     window.location.reload();
   }
 
+  
+
   return (
   <div>
     <div className="ballsdiv">
     <input type="text" onChange={(e) => props.setTitle(e.target.value)} placeholder={props.title} className='titlebox' />
     <button onClick={Saver} className="saver">Save</button>
+
     </div>
     <CodeMirror value={props.value} doc={ytext.toString()} theme={okaidia} height='70vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
     
