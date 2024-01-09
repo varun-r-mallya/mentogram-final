@@ -8,7 +8,6 @@ exports.auth = (req, res) => {
     const hashedPassword = passwordHasher.passwordHasher(password);
     const user = {
         email,
-        hashedPassword,
         type,
         
     };
