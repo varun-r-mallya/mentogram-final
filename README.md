@@ -11,12 +11,13 @@ Open up the repo and <code>cd mentogram</code><br>Then, <code>npm install</code>
 You can also update your server URL in the front end in a dedicated JSX.
 </p>
 <br>
+build Docker image and run on 127.0.0.1:3000:3000 only. Run separately.
 <br>
 <h3>Current Progress:</h3>
 <ol>
 <li>Adding rooms to the collaborative editor and removing constant rooms left
 <li>Making it mobile friendly left.
-<li>Security isn't good enough.
+<li>Secure application
 <li>Other than that, completed.
 </ol>
 
