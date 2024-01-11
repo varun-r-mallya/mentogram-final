@@ -4,12 +4,14 @@ import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
 import { yCollab } from 'y-codemirror.next'
 import * as random from 'lib0/random'
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import Save from './Save.jsx';
 import './CollaborativeEditor.css'
 import { jwtDecode } from 'jwt-decode'
+import CodeRunner from './CodeRunner.jsx';
+import CodeRunner_new from "./CodeRunner_new.jsx"
 
 function usernameSet(){
 
@@ -58,6 +60,9 @@ provider.awareness.setLocalStateField('user', {
 })
 
 export default function CollaborativeEditor(props){
+  const [showInternal, setShowInternal] = useState(false);
+  const [showAPI, setShowAPI] = useState(false);
+
   useEffect(() => {userName = usernameSet()}, []);
 
   const onChange = React.useCallback((val, viewUpdate) => {
@@ -69,6 +74,15 @@ export default function CollaborativeEditor(props){
     window.location.reload();
   }
 
+  const handleInternalClick = () => {
+    setShowInternal(true);
+    setShowAPI(false);
+  };
+
+  const handleAPIClick = () => {
+      setShowInternal(false);
+      setShowAPI(true);
+  };
   
 
   return (
@@ -79,7 +93,10 @@ export default function CollaborativeEditor(props){
 
     </div>
     <CodeMirror value={props.value} doc={ytext.toString()} theme={okaidia} height='70vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
-    
+    <button onClick={handleInternalClick}>Internal Compiler</button>
+    <button onClick={handleAPIClick}>API Compiler</button>
+    {showInternal && <CodeRunner value={props.value} />}
+    {showAPI &&  <CodeRunner_new value={props.value} />}
   </div>
   );
 }
