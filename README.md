@@ -21,6 +21,19 @@ build Docker image and run on 127.0.0.1:3000:3000 only. Run separately.
 <li>Other than that, completed.
 </ol>
 
+# Tech stack(s):
+- React.js
+- MongoDB
+- Express.js
+- Yjs
+- WebRTC
+- Peer.js
+- Docker
+- Socket.IO
+- CodeMirror
+- Anon APIs
+
+
 **Description:**
 
 MentoGram will allow organisations/clubs/institutions to set up their own personal mentoring sites where a new entrant can be matched with a mentor. This will allow them to communicate over the website using video chat. I will also be adding a collaborative code editor with real time editing access to both the mentor and the mentee. There will also be a persistent text chat in the app. The code that is added can be stored in the database accessible by the mentor and the mentees.
