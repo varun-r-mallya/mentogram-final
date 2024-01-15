@@ -16,9 +16,29 @@ You can also update your server URL in the front end in a dedicated JSX.
 <ol>
 <li>Adding rooms to the collaborative editor and removing constant rooms left
 <li>Making it mobile friendly left.
-<li>Security isn't good enough.
 <li>Other than that, completed.
 </ol>
 
+**Description:**
+
+MentoGram will allow organisations/clubs/institutions to set up their own personal mentoring sites where a new entrant can be matched with a mentor. This will allow them to communicate over the website using video chat. I will also be adding a collaborative code editor with real time editing access to both the mentor and the mentee. There will also be a persistent text chat in the app. The code that is added can be stored in the database accessible by the mentor and the mentees.
+
+**Use Cases:**
+
+MentoGram has a wide variety of use cases.
+
+It can be used 
+
+- by clubs/institutions which mentor students to code. 
+
+- by educators who teach coding to solve doubts one on one.
+
+- to take online coding rounds of interviews.
+
+- to do collaborative coding during hackathons.
+
+**Context (With respect to SDSLabs):**
+
+MentoGram can be used by clubs like SDSLabs which mentor people new to coding and development. It provides a much cleaner way to code collaboratively by bunching together video chat along with text chat and collaborative code editing. I think this will serve SDSLabs well in the future when they mentor the participants of WoC.
 
 
