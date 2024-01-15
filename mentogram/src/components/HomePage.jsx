@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import DarkModeSwitch from './DarkModeSwitch.jsx';
 import logoformentogram2 from '../assets/logoformentogram2.png';
-import bgpic from '../assets/bgpic.jpg';
+import bgpic from '../assets/bgpic.svg';
 
 import { FaGithub } from 'react-icons/fa';
 
@@ -10,7 +10,7 @@ export default function HomePage(){
     const navigate = useNavigate();
     
     return(
-        <div  style={{ backgroundImage: `url(${bgpic})`, height: "1070px" }}>
+        <div style={{ backgroundColor: 'black', backgroundImage: `url(${bgpic})`, backgroundSize: '1000px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100vh' }}>
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             {/* <DarkModeSwitch /> */}
             <div className='maindivision2'>
