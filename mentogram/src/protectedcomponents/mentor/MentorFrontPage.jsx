@@ -4,7 +4,8 @@ import logoformentogram2 from '../../assets/logoformentogram2.png';
 import CollaborativeEditor from "../collaborativeeditor/CollaborativeEditor.jsx";
 import Messages from "../chatside/Messages.jsx";
 import FileManager from "../fileaccess/FileManager.jsx";
-import bg2pic from '../../assets/bg2pic.jpg';
+import Button from '@mui/material/Button';
+
 
 const room = "roomName"
 
@@ -13,11 +14,10 @@ export default function MentorFrontPage(props) {
     const [value, setValue] = React.useState("");
     // usernameSet();
     return (
-        <div style={{ backgroundImage: `url(${bg2pic})` }}>
+        <div style={{ backgroundImage: `url(https://cdn.svgator.com/images/2022/06/background-svg-image-pattern.svg)` }}>
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
-            <DarkModeSwitch />
-            <h1>Mentor</h1>
-            <button onClick={() => {window.location.href = "/mentor";}} className="backbutton6">Back</button>
+            <h1 style={{color: 'Highlight', textAlign: "center"}}>Mentor</h1>
+            <Button variant= 'contained' style={{ backgroundColor: 'purple'}} onClick={() => {window.location.href = "/mentor";}} className="backbutton6">Back</Button>
             <div><Messages room={room}/></div>
             <div className="maindivision">
             <FileManager setTitle={setTitle} title={title} setContent={setValue} value={value} />

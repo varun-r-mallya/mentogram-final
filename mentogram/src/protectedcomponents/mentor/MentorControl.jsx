@@ -4,7 +4,8 @@ import logoformentogram2 from '../../assets/logoformentogram2.png';
 import ListOfMentees from './ListOfMentees.jsx';
 import { useState } from "react";
 import AddMentees from "./AddMentees.jsx";
-import bg2pic from '../../assets/bg2pic.jpg';
+import bg2pic from '../../assets/SVG-background-animation.gif';
+import Button from '@mui/material/Button';
 
 export default function MentorControl(props){
     
@@ -24,11 +25,10 @@ export default function MentorControl(props){
     return(
         <div style={{ backgroundImage: `url(${bg2pic})`, height: "1070px" }} onLoad={handleListOfMenteesClick}>
         <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
-        <DarkModeSwitch />
         <h1 className="mentorcontrolpanelhead">Mentor Control Panel</h1>
         <div className="mentorcontrolpanel">
-        <button className="pagebutton" onClick={handleAddMenteesClick}>Add Mentees</button>
-        <button className="pagebutton" onClick={handleListOfMenteesClick}>List Of Mentees</button>
+        <Button variant='outlined' style={{fontWeight: '3000'}} className="pagebutton" onClick={handleAddMenteesClick}>Add Mentees</Button>
+        <Button variant='outlined' style={{fontWeight: '3000'}} className="pagebutton" onClick={handleListOfMenteesClick}>List Of Mentees</Button>
         </div>    
 
         

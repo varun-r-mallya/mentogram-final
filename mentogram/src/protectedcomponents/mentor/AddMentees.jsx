@@ -6,6 +6,10 @@
 import React, { useEffect, useState } from 'react';
 import "../../App.css"
 import { serverURL } from '../../serverURL';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+
 
 export default function AddMentees() {
     const [mentorEmail, setMentorEmail] = useState('');
@@ -65,44 +69,55 @@ export default function AddMentees() {
     return (
         <div className="add-mentees">
             <h1 className="add-mentees__title">Add Mentees</h1>
-            <form className="add-mentees__form" onSubmit={handleSubmit}>
-                <label htmlFor="mentorEmail" className="add-mentees__label">Mentor Email:</label>
-                <input
+            {/* <form className="add-mentees__form" onSubmit={handleSubmit}> */}
+                <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '100%' },
+                }}
+                noValidate
+                autoComplete="off"
+                onSubmit={handleSubmit}
+                >
+                <TextField
+                    label="Mentor Email" variant="outlined"
                     type="email"
-                    id="mentorEmail"
-                    className="add-mentees__input"
+                    
+                    
                     value={mentorEmail}
                     onChange={(e) => setMentorEmail(e.target.value)}
+                    style={{marginBottom: '10px'}}
                 />
-                <br />
-                <label htmlFor="mentorPassword" className="add-mentees__label">Mentor Password:</label>
-                <input
+                <br></br>
+                <TextField
+                    label="Mentor Password" variant="outlined"
                     type="password"
-                    id="mentorPassword"
-                    className="add-mentees__input"
+                   
                     value={mentorPassword}
                     onChange={(e) => setMentorPassword(e.target.value)}
+                    style={{marginBottom: '10px'}}
                 />
                 <br />
-                <label htmlFor="menteeEmail" className="add-mentees__label">Mentee Email:</label>
-                <input
+                <TextField
+                    label="Mentee Email" variant="outlined"
                     type="email"
-                    id="menteeEmail"
-                    className="add-mentees__input"
+                   
                     value={menteeEmail}
                     onChange={(e) => setMenteeEmail(e.target.value)}
+                    style={{marginBottom: '10px'}}
                 />
                 <br />
-                <button type="button" onClick={generatePassword} className="add-mentees__button">
+                <Button variant='outlined' type="button" onClick={generatePassword} className="add-mentees__button">
                     Generate New Password
-                </button>
+                </Button>
                 <br />
                 <label htmlFor="password" className="add-mentees__label">Password:</label>
                 <b className="add-mentees__password">{password}</b>
-                <button className="copybutton" onClick={copyToClipboard}>Copy Login Info</button>
+                <Button variant='outlined' className="copybutton" onClick={copyToClipboard}>Copy Login Info</Button>
                 <br />
                 <button type="submit" className="add-mentees__button">Add Mentee</button>
-            </form>
+                </Box>
+            {/* </form> */}
             <p className="add-mentees__server-message">{serverMessage}</p>
         </div>
     );

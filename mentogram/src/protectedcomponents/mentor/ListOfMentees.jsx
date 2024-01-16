@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { getToken } from "../tokenService";
 import { serverURL } from "../../serverURL";
 import "./ListOfMentees.css";
+import Button from '@mui/material/Button';
 
 export default function ListOfMentees() {
             const [mentees, setMentees] = useState([]);
@@ -39,11 +40,12 @@ export default function ListOfMentees() {
             return (
                         <div>
                             <h1>Mentees</h1>
-                            <ul className="mentees-list"> {/* Add a class name for styling */}
+                            <ul className="mentees-list" style={{width: '95vw'}}> {/* Add a class name for styling */}
                                 {mentees.map((mentee, index) => (
-                                    <li className="list" key={index}>
+                                    <li className="list" key={index} style={{fontWeight: '500'}}>
                                         {mentee}
-                                        <button
+                                        <Button
+                                            variant="contained"
                                             onClick={() => {
                                                 localStorage.setItem(
                                                     "accessCreds",
@@ -54,7 +56,7 @@ export default function ListOfMentees() {
                                             className="connect-button"
                                         >
                                             Connect Mentee
-                                        </button>
+                                        </Button>
                                     </li>
                                 ))}
                             </ul>
