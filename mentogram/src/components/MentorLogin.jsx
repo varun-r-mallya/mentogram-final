@@ -81,17 +81,22 @@ export default function MentorLogin(props) {
         <h2>Mentor Login</h2>
         <form onSubmit={handleSubmit}>
             <label>
+                <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
                 Email:
+                </div>
                 <input type="email" name="email" className="input-field"  value={formData.email} onChange={handleInputChange}/>
             </label>
             <label>
+            <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
                 Password:
+            </div>
                 <input type="password" name="password" className="input-field" value={formData.password} onChange={handleInputChange} />
             </label>
             <div className="submitalign">
                 <input type="submit" value="Submit" className="submitbutton" />
             </div>
         </form>
+        <br></br>
         <h5 className="registerprompt">First time?<button onClick={handleRegisterChange} className="registerlink"> Register here</button></h5>
         </div>
     </div>
@@ -104,7 +109,9 @@ export default function MentorLogin(props) {
             return (
             <div>
             <MentorRegister />
+            <br />
             <div className='registerprompt'><button onClick={handleRegisterChange} className="registerlink">Already registered? Login here</button></div>
+            <br />
             </div>
             )
         }

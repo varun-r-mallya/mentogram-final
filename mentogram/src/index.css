@@ -2,6 +2,8 @@
 body, html {
     margin: 0;
     padding: 0;
+    text-emphasis-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
   }
   
   /* Ensuring full height for the content */
@@ -9,3 +11,4 @@ body, html {
     height: 100vh; /* 100% of the viewport height */
     width: 100%;   /* 100% of the viewport width */
   } 
+

@@ -75,20 +75,28 @@ export default function MentorRegister(){
                 <h2>Mentor Registration</h2>
                 <form onSubmit={handleSubmit}>
                     <label>
+                    <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
                         Username:
+                    </div>
                         <input type="text" name="username" className="input-field" value={formData.username} onChange={handleInputChange} />
                     </label>
                     
                     <label>
+                    <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
                         Email:
+                    </div>
                         <input type="email" name="email" className="input-field" value={formData.email} onChange={handleInputChange} />
                     </label>
                     <label>
+                    <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
                         Password:
+                    </div>
                         <input type="password" name="password" className="input-field" value={formData.password} onChange={handleInputChange} />
                     </label>
                     <label>
+                    <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
                         Confirm Password:
+                    </div>
                         <input type="password" name="confirmpassword" className="input-field" value={formData.confirmpassword} onChange={handleInputChange} />
                     </label>
                     <div className="submitalign">

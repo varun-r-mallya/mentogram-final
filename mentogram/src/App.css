@@ -46,36 +46,55 @@ header{
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: transparent;
     margin: 15% auto 0;
+    text-align: center;
   }
   
-  .choicepage > h2 {
+  .choicepage > h1 {
     text-align: center;
     margin-bottom: 20px;
-    display: flex;
     padding-top: 0px;
     margin-top: 3px;
+    font-family: "roboto", sans-serif;
+    font-size: 30px;
+    body {
+      justify-content: center; 
+      align-items: center; 
+      font-family: "roboto", sans-serif;
+    };
+    color: #17d841;
   }
-  
+
+.choicepage button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #7f0fda;
+  outline: white;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.choicepage button:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
   .choicepage button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #4285f4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-top: 0px;
+    padding: 0.25em 0.75em;
   }
-  
-  .choicepage button:hover {
-    background-color: #357ae8;
-  }
-  
+}
   
   label {
     display: block;
@@ -83,7 +102,7 @@ header{
   }
   
   .input-field {
-    width: calc(100% - 22px); /* Adjust the input width as needed */
+    width: calc(100% - 22px); 
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -92,23 +111,68 @@ header{
 
   .submitalign{
     display: flex;
-    flex-direction: column; /* Ensure items are in a column layout */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     }
-  .submitbutton{
-    display: block;
-    width: 25%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #4285f4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-top: 0px;
-  }
+
+    .submitbutton {
+      align-items: center;
+      background-color: #fee6e3;
+      border: 2px solid #1ab2bd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      color: #111;
+      cursor: pointer;
+      display: flex;
+      font-family: Inter,sans-serif;
+      font-size: 16px;
+      height: 48px;
+      justify-content: center;
+      line-height: 24px;
+      max-width: 100%;
+      padding: 0 25px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+    .submitbutton:after {
+      background-color: #111;
+      border-radius: 8px;
+      content: "";
+      display: block;
+      height: 48px;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      top: -2px;
+      transform: translate(8px, 8px);
+      transition: transform .2s ease-out;
+      z-index: -1;
+    }
+    
+    .submitbutton:hover:after {
+      transform: translate(0, 0);
+    }
+    
+    .submitbutton:active {
+      background-color: #ffdeda;
+      outline: 0;
+    }
+    
+    .submitbutton:hover {
+      outline: 0;
+    }
+    
+    @media (min-width: 768px) {
+      .submitbutton {
+        padding: 0 40px;
+      }
+    }
 
 footer{
     background-color: #333;

@@ -74,17 +74,23 @@ export default function MenteeLogin(props) {
         <h2>Mentee Login</h2>
         <form onSubmit={handleSubmit}>
       <label>
+      <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
         Email:
+      </div>
         <input type="email" name="email" className="input-field"  value={formData.email} onChange={handleInputChange}/>
       </label>
       <label>
+      <div style={{textAlign: 'left', fontSize: '18px', fontFamily: 'initial', fontWeight: 'bold'}}>
         Password:
+      </div>
         <input type="password" name="password" className="input-field" value={formData.password} onChange={handleInputChange} />
       </label>
+      <br />
       <div className="submitalign">
       <input type="submit" value="Submit" className="submitbutton" />
       </div>
     </form>
+    <br />
         </div>
     );
 }
