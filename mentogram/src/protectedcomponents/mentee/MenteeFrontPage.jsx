@@ -6,7 +6,6 @@ import CollaborativeEditor from "../collaborativeeditor/CollaborativeEditor.jsx"
 import Messages from "../chatside/Messages.jsx";
 import { jwtDecode } from 'jwt-decode'
 import FileManager from "../fileaccess/FileManager.jsx";
-import bg2pic from '../../assets/bg2pic.jpg';
 
 const room = "roomName"
 
@@ -31,10 +30,10 @@ export default function MenteeFrontPage(props) {
     const [value, setValue] = React.useState("");
     // usernameSet();
     return (
-        <div style={{ backgroundImage: `url(${bg2pic})` }}>
+        <div style={{ backgroundImage: `url(https://cdn.svgator.com/images/2022/06/background-svg-image-pattern.svg)` }}>
             <header><img src={logoformentogram2} alt="Mentogram Logo" className="logo" /></header>
             <DarkModeSwitch />
-            <h1 style={{textAlign: "center"}}>Mentee</h1>
+            <h1 style={{textAlign: "center", color:'blue'}}>Mentee</h1>
             <div><Messages room={room}/></div>
             <div className="maindivision">
             <FileManager setTitle={setTitle} title={title} setContent={setValue} value={value} />
