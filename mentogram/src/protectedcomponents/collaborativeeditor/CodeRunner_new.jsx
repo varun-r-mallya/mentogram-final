@@ -67,15 +67,16 @@ export default function CodeRunner_new(props){
     let data = ({
         "code": props.value,
         "language": language,
-        "input": iNput
+        "input": iNput,
+        "version": 'latest',
     });
     let config = {
         method: 'post',
-        url: 'https://codex7.p.rapidapi.com/',
+        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
         headers: {
-            'content-type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Host': 'codex7.p.rapidapi.com',
-            'X-RapidAPI-Key': 'fcc2d6c6b3msh404adbe533c36f5p148528jsn4a93557ee62f'
+          'content-type': 'application/json',
+          'X-RapidAPI-Key': '709e1782d7mshbeaee63ccac5ad1p1666aajsna962815b2571',
+          'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
         },
         data: data
     };
@@ -95,18 +96,248 @@ export default function CodeRunner_new(props){
     <div>
       <Button onClick={handleSubmit}>Run</Button>
       <select value={language} onChange={handleDropDown}>
-        <option value="c">
-            C
+        <option value="ada">
+            Ada
         </option>
-        <option value="cpp">
+        <option value="algol">
+          Algol 68
+        </option>
+        <option value="awk">
+            AWK
+        </option>
+        <option value="bash">
+          Bash Shell
+        </option>
+        <option value="bc">
+            BC
+        </option>
+        <option value="befunge">
+          Befunge
+        </option>
+        <option value="blockly">
+            Blockly
+        </option>
+        <option value='brainfuck'>
+          Brainf**k
+        </option>
+        <option value='c'>
+          C
+        </option>
+        <option value='c99'>
+          C-99
+        </option>
+        <option value='clisp'>
+          Clisp
+        </option>
+        <option value='clojure'>
+          Clojure
+        </option>
+        Copy code
+        <option value='cobol'>
+          COBOL
+        </option>
+        <option value='coffeescript'>
+          CoffeeScript
+        </option>
+        <option value='cpp'>
           C++
         </option>
-        <option value="py">
-            Python
+        <option value='cpp14'>
+          C++ 14
         </option>
-        <option value="java">
+        <option value='cpp17'>
+          C++ 17
+        </option>
+        <option value='csharp'>
+          C#
+        </option>
+        <option value='d'>
+          D
+        </option>
+        <option value='dart'>
+          Dart
+        </option>
+        <option value='elixir'>
+          Elixir
+        </option>
+        <option value='erlang'>
+          Erlang
+        </option>
+        <option value='factor'>
+          Factor
+        </option>
+        <option value='falcon'>
+          Falcon
+        </option>
+        <option value='fantom'>
+          Fantom
+        </option>
+        <option value='fasm'>
+          FASM
+        </option>
+        <option value='forth'>
+          Forth
+        </option>
+        <option value='fortran'>
+          Fortran
+        </option>
+        <option value='freebasic'>
+          FREE BASIC
+        </option>
+        <option value='fsharp'>
+          F#
+        </option>
+        <option value='gccasm'>
+          Assembler - GCC
+        </option>
+        <option value='go'>
+          GO Lang
+        </option>
+        <option value='groovy'>
+          Groovy
+        </option>
+        <option value='hack'>
+          Hack
+        </option>
+        <option value='haskell'>
+          Haskell
+        </option>
+        <option value='haxe'>
+          Haxe
+        </option>
+        <option value='icon'>
+          Icon
+        </option>
+        <option value='intercal'>
+          Intercal
+        </option>
+        <option value='java'>
           Java
         </option>
+        <option value='jbang'>
+          JBang
+        </option>
+        <option value='jlang'>
+          J Language
+        </option>
+        <option value='kotlin'>
+          Kotlin
+        </option>
+        <option value='lolcode'>
+          LOLCODE
+        </option>
+        <option value='lua'>
+          Lua
+        </option>
+        <option value='mozart'>
+          OZ Mozart
+        </option>
+        <option value='nasm'>
+          Assembler - NASM
+        </option>
+        <option value='nemerle'>
+          Nemerle
+        </option>
+        <option value='nim'>
+          Nim
+        </option>
+        <option value='nodejs'>
+          NodeJS
+        </option>
+        <option value='objc'>
+          Objective C
+        </option>
+        <option value='ocaml'>
+          Ocaml
+        </option>
+        <option value='octave'>
+          Octave
+        </option>
+        <option value='pascal'>
+          Pascal
+        </option>
+        <option value='perl'>
+          Perl
+        </option>
+        <option value='php'>
+          PHP
+        </option>
+        <option value='picolisp'>
+          Picolisp
+        </option>
+        <option value='pike'>
+          Pike
+        </option>
+        <option value='prolog'>
+          Prolog
+        </option>
+        <option value='python2'>
+          Python 2
+        </option>
+        <option value='python3'>
+          Python 3
+        </option>
+        <option value='r'>
+          R Language
+        </option>
+        <option value='racket'>
+          Racket
+        </option>
+        <option value='rhino'>
+          Rhino JS
+        </option>
+        <option value='ruby'>
+          Ruby
+        </option>
+        <option value='rust'>
+          RUST
+        </option>
+        <option value='scala'>
+          Scala
+        </option>
+        <option value='scheme'>
+          Scheme
+        </option>
+        <option value='smalltalk'>
+          SmallTalk
+        </option>
+        <option value='spidermonkey'>
+          SpiderMonkey
+        </option>
+        <option value='sql'>
+          SQL
+        </option>
+        <option value='swift'>
+          Swift
+        </option>
+        <option value='tcl'>
+          TCL
+        </option>
+        <option value='unlambda'>
+          Unlambda
+        </option>
+        <option value='vbn'>
+          VB.Net
+        </option>
+        <option value='verilog'>
+          VERILOG
+        </option>
+        <option value='whitespace'>
+          Whitespace
+        </option>
+        <option value='yabasic'>
+          YaBasic
+        </option>
+
+
+
+
+
+  
+  
+  
+ 
+  
       </select>
       <br />
       <div style={{display: 'flex', flexDirection: 'row' }}>
