@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { serverURL } from '../../serverURL';
 import './Fileman.css';
 import { getToken } from '../tokenService';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const firstRequest = async (user) => {
     const token = getToken();
@@ -69,18 +71,18 @@ export default function MyFileBrowser(props) {
 
     return (
         <div className='filelist'>
-            <h4>Files</h4>
+            <h4 style={{textAlign: 'center', backgroundColor: 'skyblue'}}>Files</h4>
             <ol className='file-list'>
                 {files.map((file) => {
                     
                         return (
                             <li key={file.id} value={file.name} className='list-item-fileman'>
-                                <button className='option-folder-select' onClick={() => handleFileClick(file)}>
+                                <Button  variant='outline' className='option-folder-select' onClick={() => handleFileClick(file)}>
                                     {file.name}
-                                </button>
-                                <button className='option-folder-delete' onClick={() => {handleDelete(file); window.location.reload();}}>
-                                    Delete
-                                </button>
+                                </Button>
+                                <Button  variant='outline' className='option-folder-delete' onClick={() => {handleDelete(file); window.location.reload();}} style={{marginRight: '0'}}>
+                                    <DeleteIcon />
+                                </Button>
                             </li>
                         );
                     })}

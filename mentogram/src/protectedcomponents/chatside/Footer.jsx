@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { FormControl } from '@mui/material';
+import {Input} from '@mui/material';
 export default function Footer(props) {
     const [inputValue, setInputValue] = useState('');
     const handleSubmit = (e) => {
@@ -10,14 +14,15 @@ export default function Footer(props) {
         }
     };
     return(
-        <form onSubmit={handleSubmit} className="messages_form">
-        <input
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          autoComplete="off"
-          width="500px"
-        />
-        <button type="submit">Send</button>
-       </form>
+        <form onSubmit={handleSubmit} className="messages_form" style={{display: 'flex', flexDirection: 'row'}}>
+            <Input
+                placeholder="Type a message"  
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                autoComplete="off"
+                width="500px"
+            />
+            <Button type="submit">Send</Button>
+        </form>
     )
 }

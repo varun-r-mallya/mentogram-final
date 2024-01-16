@@ -12,6 +12,8 @@ import './CollaborativeEditor.css'
 import { jwtDecode } from 'jwt-decode'
 import CodeRunner from './CodeRunner.jsx';
 import CodeRunner_new from "./CodeRunner_new.jsx"
+import Button from '@mui/material/Button';
+import Input from '@mui/material/Input';
 
 function usernameSet(){
 
@@ -86,15 +88,15 @@ export default function CollaborativeEditor(props){
   
 
   return (
-  <div>
+  <div style={{alignItems: 'center'}}>
     <div className="ballsdiv">
-    <input type="text" onChange={(e) => props.setTitle(e.target.value)} placeholder={props.title} className='titlebox' />
-    <button onClick={Saver} className="saver">Save</button>
+    <Input type="text" variant="outline" onChange={(e) => props.setTitle(e.target.value)} placeholder={props.title} className='titlebox' />
+    <Button onClick={Saver} className="saver" style={{backgroundColor: "purple", color: 'white'}}>Save</Button>
 
     </div>
     <CodeMirror value={props.value} doc={ytext.toString()} theme={okaidia} height='70vw' width='49vw' extensions={[python(), basicSetup, yCollab(ytext, provider.awareness, { undoManager }) ]} onChange={onChange}/>
-    <button onClick={handleInternalClick}>Internal Compiler</button>
-    <button onClick={handleAPIClick}>API Compiler</button>
+    <Button variant='contained' onClick={handleInternalClick} style={{margin: '10px'}}>Internal Compiler</Button>
+    <Button variant='contained' onClick={handleAPIClick}>API Compiler</Button>
     {showInternal && <CodeRunner value={props.value} />}
     {showAPI &&  <CodeRunner_new value={props.value} />}
   </div>

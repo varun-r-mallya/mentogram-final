@@ -1,20 +1,46 @@
-.ballsdiv,
+.ballsdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    background-color: #8c8cf7;
+    outline: rgb(238, 45, 141);
+    color: #3fbd64;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    width: 96%;
+    height: 50px;
+    align-items: center;
+
+}
 .titlebox {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-    background-color: #333;
-    color: #fff;
+    margin: 10px;
+    background-color: #8c8cf7;
+    outline: rgb(238, 45, 141);
+    color: #3fbd64;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 18px;
     font-weight: bold;
     width: 98%;
+    height: 50px;
 
 
+}
+
+.titlebox::placeholder {
+    color: #51db51;
+    font-size: 18px;
+    font-weight: bold;
 }
 .saver{
     display: flex;
@@ -22,17 +48,22 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: #b84949;
+    color: #ac5959;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 18px;
     font-weight: bold;
     width: 30%;
+    height: 45px;
 
 }
 
 .titlebox:hover {
-    background-color: #444;
+    background-color: #40aaf0;
+}
+
+.titlebox:active {
+    background-color: #67acda;
 }

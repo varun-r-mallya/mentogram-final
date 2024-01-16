@@ -4,9 +4,10 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 10vw;
-    height: 70vw;
+    
     position: absolute;
     left: 0;
+    top: 27vh;
 }
 
 .file-list {

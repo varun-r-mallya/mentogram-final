@@ -1,12 +1,13 @@
 .messages_total {
     position: absolute;
+    top: 290px;
     right: 0;
 }
 .message_div {
     max-height: 300px;
     overflow-y: auto;
     height: 25vw;
-    width: 35vw;
+    width: 38vw;
 }
 
 .messages_list {
@@ -32,16 +33,19 @@
     align-items: center;
     padding: 10px;
     background-color: #9deea1;
-    width: calc(35vw - 20px);
+    width: calc(38vw - 25px);
+    height: 40px;
     border-radius: 10px;
 }
 
-.messages_form input {
-    width: calc(35vw - 100px);
-    height: 30px;
+.messages_form Input {
+    width: calc(38vw - 150px);
+    height: 25px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    background-color: #fff;
     padding: 5px;
+    margin: 10px;
 }
 
 .messages_form button {
@@ -51,4 +55,5 @@
     border: 1px solid #ccc;
     background-color: #fff;
     cursor: pointer;
+    margin: 12px
 }

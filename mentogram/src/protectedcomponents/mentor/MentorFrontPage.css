@@ -1,0 +1,4 @@
+.containerforfrontpage{
+    display: flex;
+    flex-direction: row;
+}
