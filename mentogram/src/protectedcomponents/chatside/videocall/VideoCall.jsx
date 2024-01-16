@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Peer from 'peerjs';
 import './VideoCall.css';
+import Button from '@mui/material/Button';
 
 export default function VideoCall(props) {
 
@@ -99,9 +100,9 @@ export default function VideoCall(props) {
             <br />
             <div className='videocallheading'>
             {/* <input type="text" value={mentorName} onChange={e => setMentorName(e.target.value)} /> */}
-            <button onClick={handleConnect} className='connectbutton'>Connect</button>
+            <Button onClick={handleConnect} className='connectbutton' style={{backgroundColor: 'green', color: 'black', fontWeight: 400, margin: "10px"}}>Connect</Button>
             {/* <button onClick={() => call(remotePeerIdValue)}>Call</button> */}
-            <button onClick={endCall} className='endcallbutton'>End Call</button>
+            <Button onClick={endCall} className='endcallbutton' style={{backgroundColor: 'red', color: 'black', fontWeight: 400, margin: "10px"}}>End Call</Button>
             </div>
             <div>
                 <video ref={remoteVideoRef} />
